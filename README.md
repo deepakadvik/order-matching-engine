@@ -1,4 +1,4 @@
-# order-matching-engine
+# Order Matching Engine
 Every trade on a stock exchange goes through an order matching engine. This is mine — built from scratch in C++ with a focus on low latency, correctness, and real exchange-grade matching logic.
 
 High-Performance Order Matching Engine
@@ -10,6 +10,7 @@ When you place a stock order on an exchange, a matching engine is the system tha
 
 # Architecture
 
+```
 ┌─────────────────────────────────────────────────┐
 │                  Order Gateway                  │
 │         (Incoming BUY / SELL orders)            │
@@ -39,8 +40,9 @@ When you place a stock order on an exchange, a matching engine is the system tha
 │                 Trade Log                       │
 │     (Matched orders, prices, timestamps)        │
 └─────────────────────────────────────────────────┘
+```
 
-#Features
+# Features
 
 - **Limit Orders** — Buy/Sell at a specified price
 - **Market Orders** — Execute immediately at best available price
@@ -59,11 +61,6 @@ When you place a stock order on an exchange, a matching engine is the system tha
 | `std::mutex` + `std::condition_variable` | Producer-consumer synchronization | — |
 
 # Getting Started
-
-# Prerequisites
-- C++17 or later
-- CMake 3.15+
-- Linux / macOS (or WSL on Windows)
 
 # Build
 
@@ -117,11 +114,12 @@ Example:
 
 # Benchmarks
 
-  Metric              Value
-Order insertion,     O(log n)
-Order matching,      O(1) per fill
-Order cancellation,  O(1)
-Throughput,          TBD after Phase 3
+| Metric | Value |
+|---|---|
+| Order insertion | O(log n) |
+| Order matching | O(1) per fill |
+| Order cancellation | O(1) |
+| Throughput | _TBD after Phase 3_ |
 
 
 # Roadmap
@@ -133,15 +131,7 @@ Throughput,          TBD after Phase 3
 - Phase 5 — Lock-free queue with atomics
 
 
-# References
-
-- [How Exchanges Work — Investopedia](https://www.investopedia.com)
-- [C++ Concurrency in Action — Anthony Williams]
-- [Linux Kernel Development — Robert Love]
-
-
 # Author
 
 **Deepak Kesharwani**  
-M.Tech — Industrial Engineering & Data Analytics
-डॉ बी आर अम्बेडकर राष्ट्रीय प्रौद्योगिकी संस्थान जालंधर, पंजाब (भारत)
+M.Tech — Industrial & Data Analytics, NIT Jalandhar
